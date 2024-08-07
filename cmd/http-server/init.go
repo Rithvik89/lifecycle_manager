@@ -53,7 +53,7 @@ func initDB(app *App) {
 func initKVDB(app *App) {
 	sess := session.Must(session.NewSession())
 	db := dynamodb.New(sess, &aws.Config{
-		Region:      aws.String(app_config.Data.MustString("Dynamo_Region")),
+		Region:      aws.String(app_config.Data.MustString("DYNAMO_REGION")),
 		Credentials: credentials.NewStaticCredentials("AKIAUZAIJPCMOYOR7ZEN", "HU9drLbe1E90lORcPlfDIsPlaxngAFuh+M3QbCqF", ""),
 	})
 	app.kvdb = db
